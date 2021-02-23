@@ -187,7 +187,11 @@ zxing::byte CameraImageWrapper::gray(const unsigned int r, const unsigned int g,
 
 void CameraImageWrapper::updateImageAsGrayscale(const QImage &origin)
 {
+#if QT_VERSION >= 0x050000
     bool needsConvesionToGrayscale = origin.format() != QImage::Format_Grayscale8;
+#else
+    bool needsConvesionToGrayscale = origin.format() != QImage::Format_Indexed8;
+#endif
 
     QRgb pixel;
     zxing::byte pixelGrayscale;

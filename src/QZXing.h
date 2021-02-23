@@ -28,6 +28,8 @@
 
 #if QT_VERSION >= 0x050000
     class QQmlEngine;
+#else
+    #define Q_NULLPTR 0
 #endif
 
 // forward declaration

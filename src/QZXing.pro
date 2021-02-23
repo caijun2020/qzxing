@@ -25,6 +25,8 @@ CONFIG += \
           #qzxing_qml
           #qzxing_multimedia
 
+QMAKE_CXXFLAGS += -std=c++0x
+
 VERSION = 2.3
 
 TARGET = QZXing
